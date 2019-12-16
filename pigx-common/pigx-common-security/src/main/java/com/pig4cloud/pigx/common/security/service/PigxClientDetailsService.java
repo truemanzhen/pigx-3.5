@@ -45,7 +45,8 @@ public class PigxClientDetailsService extends JdbcClientDetailsService {
 	 * @throws InvalidClientException
 	 */
 	@Override
-	@Cacheable(value = CacheConstants.CLIENT_DETAILS_KEY, key = "#clientId", unless = "#result == null")
+	//调试暂时去掉缓存
+	//@Cacheable(value = CacheConstants.CLIENT_DETAILS_KEY, key = "#clientId", unless = "#result == null")
 	public ClientDetails loadClientByClientId(String clientId) {
 		return super.loadClientByClientId(clientId);
 	}
